@@ -61,7 +61,7 @@
 
       id.innerHTML = item.idProduct;
       name.innerHTML = item.nameProduct; 
-      category.innerHTML = item.categoryProduct;
+      category.innerHTML = `<img alt="${item.categoryProduct}" src="images/${(item.categoryProduct).toLowerCase()}.png"></img>${item.categoryProduct}`;
       price.innerHTML = `${item.priceProduct} €`; 
       quantity.innerHTML = item.quantityProduct; 
       action.innerHTML = `
