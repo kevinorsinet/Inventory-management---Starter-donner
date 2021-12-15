@@ -31,5 +31,12 @@
       quantityProduct: quantity
     } 
 
+    // Créer une liste
+    let productsList = []; 
+    productsList.push(product); 
+
+    // Sauvegarde dans le local storage
+    localStorage.setItem('products', JSON.stringify(productsList));
+
     console.log("newProduct", product);
   }
