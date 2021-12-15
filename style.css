@@ -1,0 +1,81 @@
+body {
+  background-color: #f5f7f9;
+}
+
+
+/* Products list */
+.white_card {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  margin-bottom: 80px;
+}
+
+.white_card .white_card_header {
+  padding: 22px 30px;
+}
+
+.white_card .white_card_body {
+  padding: 5px 30px 25px 30px;
+}
+
+tr{
+  border: hidden;
+}
+
+tbody tr td img {
+  width: 25px;
+  margin-right: 4px;
+}
+
+/* Icon */
+.iconEdit {
+  color: #457b9d;
+  margin-right: 5px;
+}
+
+.iconDelete {
+  color: #e63946;
+}
+
+
+/* Form */
+.formProduct {
+  display: none;
+  margin-bottom: 20px;
+}
+
+/* Input */
+.common_input input {
+height: 38px;
+background-color: transparent;
+padding: 10px 8px;
+color: #81879F;
+font-size: 14px;
+border-radius: 10px;
+border: 1px solid #E5ECFF;
+margin-bottom: 18px
+}
+
+/* Select */
+.nice_Select2 {
+  border-radius: 10px;
+  height: 36px;
+  font-size: 14px;
+  color: #81879F;
+  margin-bottom: 18px
+}
+
+.nice_Select2.nice_Select_line {
+  background: transparent;
+  padding: 0 8px;
+  border: 1px solid #E5ECFF;
+}
+
+.btn-add {
+  background-color: #06d6a0;
+}
+
+.btn-cancel {
+  background-color: #ffd166
+}
+
