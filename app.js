@@ -40,6 +40,26 @@
     // Sauvegarde dans le local storage
     localStorage.setItem('products', JSON.stringify(productsList));
 
-
-    console.log("newProduct", product);
+    
   }
+
+  function getProducts() {
+    return localStorage.getItem('products');
+
+  }
+
+  (function showProducts() {
+    const products = getProducts();
+    const tableContent = document.getElementById('tableContent');
+    console.log(products);
+    products.forEach((item)=> {
+      let row = tableContent.insertRow();
+      let id = row.insertCell(0);
+      let name = row.insertCell(1);
+
+      id.innerHTML = 1;
+      name.innerHTML = "Product 1"; 
+      
+    })
+  })()
+
