@@ -32,11 +32,14 @@
     } 
 
     // Créer une liste
-    let productsList = []; 
+    // let productsList = []; 
+    let productsList = localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')) : [];
+
     productsList.push(product); 
 
     // Sauvegarde dans le local storage
     localStorage.setItem('products', JSON.stringify(productsList));
+
 
     console.log("newProduct", product);
   }
