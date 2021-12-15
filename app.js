@@ -49,6 +49,9 @@
   (function showProducts() {
     const products = getProducts();
     const tableContent = document.getElementById('tableContent');
+
+    
+
     // console.log(products);
     products.forEach((item)=> {
       let row = tableContent.insertRow();
@@ -66,7 +69,7 @@
       quantity.innerHTML = item.quantityProduct; 
       action.innerHTML = `
       <a onclick="showEditProduct(${item.idProduct})"><i class="fas fa-edit iconEdit"></i></a>
-      <a><i class="fas fa-trash-alt iconDelete"></i></a>`;
+      <a onclick="deleteProduct(${item.idProduct})"><i class="fas fa-trash-alt iconDelete"></i></a>`;
       
     });
   })();
@@ -110,8 +113,8 @@
   function updateProduct() {
     let productsList = getProducts();
     const productId = document.getElementById('productId').value;
-
     let product = productsList.find((element)=>{ return element.idProduct == productId });
+
     // Récupère les valeurs du formulaire
     let name = document.getElementById('editName').value;
     let category = document.getElementById('editCategory').value;
@@ -126,6 +129,16 @@
     
     // Mis à jour de la liste des produits
     localStorage.setItem('products', JSON.stringify(productsList));
-    
+  }
+
+  function deleteProduct(id) {
+    let productsList = getProducts();
+    const removeProduct = productsList.findIndex( element => element.idProduct == id );
+    productsList.splice(removeProduct, 1);
+    // Mis à jour de la liste des produits
+    localStorage.setItem('products', JSON.stringify(productsList));
+    location.reload();
+
+
   }
 
