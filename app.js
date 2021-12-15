@@ -49,7 +49,7 @@
   (function showProducts() {
     const products = getProducts();
     const tableContent = document.getElementById('tableContent');
-    console.log(products);
+    // console.log(products);
     products.forEach((item)=> {
       let row = tableContent.insertRow();
       let id = row.insertCell(0);
@@ -76,7 +76,7 @@
     const productSingle = products.find((element)=>{ return element.idProduct == idEdit});
     // const productSingle = products.find((element) => element.idProduct == idEdit);
 
-    console.log(productSingle);
+    // console.log(productSingle);
     let modalEditProduct = new bootstrap.Modal(document.getElementById("modalEditProduct"));
     modalEditProduct.show();
 
@@ -87,6 +87,20 @@
     editPrice.value = productSingle.priceProduct;    
     let editQuantity = document.getElementById('editQuantity');
     editQuantity.value = productSingle.quantityProduct;
+    
+    //  category
+    const editCategory = document.getElementById('editCategory');
+    editCategory.innerHTML = null;
+    categoriesList.forEach((item) => {
+      let option = document.createElement("option");
+      if (productSingle.categoryProduct == item) {
+        option.selected = true;
+      }
+      option.text = item;
+      option.value = item;
+      editCategory.add(option);
+    })
+
 
   }
 
