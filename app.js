@@ -40,7 +40,7 @@
     // Sauvegarde dans le local storage
     localStorage.setItem('products', JSON.stringify(productsList));
   }
-
+  // Retourne la liste des objets du local storage 
   function getProducts() {
     return localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')) : [];
 
@@ -65,9 +65,28 @@
       price.innerHTML = `${item.priceProduct} €`; 
       quantity.innerHTML = item.quantityProduct; 
       action.innerHTML = `
-      <a><i class="fas fa-edit iconEdit"></i></a>
+      <a onclick="showEditProduct(${item.idProduct})"><i class="fas fa-edit iconEdit"></i></a>
       <a><i class="fas fa-trash-alt iconDelete"></i></a>`;
       
     });
   })();
+
+  function showEditProduct(idEdit) {
+    const products = getProducts();
+    const productSingle = products.find((element)=>{ return element.idProduct == idEdit});
+    // const productSingle = products.find((element) => element.idProduct == idEdit);
+
+    console.log(productSingle);
+    let modalEditProduct = new bootstrap.Modal(document.getElementById("modalEditProduct"));
+    modalEditProduct.show();
+
+    // Edite le formulaire
+    let editName = document.getElementById('editName');
+    editName.value = productSingle.nameProduct;
+    let editPrice = document.getElementById('editPrice');
+    editPrice.value = productSingle.priceProduct;    
+    let editQuantity = document.getElementById('editQuantity');
+    editQuantity.value = productSingle.quantityProduct;
+
+  }
 

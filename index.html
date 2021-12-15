@@ -71,6 +71,49 @@
   </div>
   <!-- Modal Add Product End -->
 
+  
+<!-- Modal Edit Product -->
+<div class="modal fade" id="modalEditProduct" tabindex="-1" role="dialog" aria-labelledby="editProductTitle"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title" id="editProductTitle">
+        Edit product
+      </h4>
+    </div>
+
+    <div class="modal-body">
+      <form onsubmit="updateProduct()">
+        <div class="common_input">
+          <label class="form-label">Name</label>
+          <input type="text" id="editName">
+        </div>
+        <div class="common_input">
+          <label class="form-label">Category</label>
+          <select class="form-select nice_Select2 nice_Select_line" id="editCategory">
+            <option>Choose a category</option>
+          </select>
+        </div>
+        <div class="common_input">
+          <label class="form-label">Price</label>
+          <input type="number" id="editPrice">
+        </div>
+        <div class="common_input">
+          <label class="form-label">Quantity</label>
+          <input type="number" id="editQuantity">
+        </div>
+        <div class="modal-footer-extended">
+          <button class="btn btn-add">Edit</button>
+          <button class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+</div>
+<!-- Modal Edit Product End -->
 
   <!-- Products list -->
   <section class="showProducts">
