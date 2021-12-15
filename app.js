@@ -88,6 +88,10 @@
     let editQuantity = document.getElementById('editQuantity');
     editQuantity.value = productSingle.quantityProduct;
     
+    // id 
+    let productId = document.getElementById('productId');
+    productId.value = productSingle.idProduct;
+
     //  category
     const editCategory = document.getElementById('editCategory');
     editCategory.innerHTML = null;
@@ -99,8 +103,29 @@
       option.text = item;
       option.value = item;
       editCategory.add(option);
+
     })
+  }
+  
+  function updateProduct() {
+    let productsList = getProducts();
+    const productId = document.getElementById('productId').value;
 
+    let product = productsList.find((element)=>{ return element.idProduct == productId });
+    // Récupère les valeurs du formulaire
+    let name = document.getElementById('editName').value;
+    let category = document.getElementById('editCategory').value;
+    let price = document.getElementById('editPrice').value;
+    let quantity = document.getElementById('editQuantity').value;
 
+    // Mettre à jour l'objet produit
+    product.nameProduct = name;
+    product.categoryProduct = category;
+    product.priceProduct = price;
+    product.quantityProduct = quantity;    
+    
+    // Mis à jour de la liste des produits
+    localStorage.setItem('products', JSON.stringify(productsList));
+    
   }
 

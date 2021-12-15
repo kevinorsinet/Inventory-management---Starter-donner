@@ -71,7 +71,7 @@
   </div>
   <!-- Modal Add Product End -->
 
-  
+
 <!-- Modal Edit Product -->
 <div class="modal fade" id="modalEditProduct" tabindex="-1" role="dialog" aria-labelledby="editProductTitle"
 aria-hidden="true">
@@ -85,6 +85,7 @@ aria-hidden="true">
 
     <div class="modal-body">
       <form onsubmit="updateProduct()">
+        <input type="hidden" id="productId">
         <div class="common_input">
           <label class="form-label">Name</label>
           <input type="text" id="editName">
