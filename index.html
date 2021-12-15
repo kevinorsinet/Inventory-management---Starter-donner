@@ -39,10 +39,10 @@
 
         <!-- Form New Product -->
         <div class="modal-body">
-          <form>
+          <form onsubmit="addNewProducts()">
             <div class="common_input">
               <label class="form-label">Name</label>
-              <input type="text">
+              <input id="name" type="text">
             </div>
             <div class="common_input">
               <label class="form-label">Category</label>
@@ -52,11 +52,11 @@
             </div>
             <div class="common_input">
               <label class="form-label">Price</label>
-              <input type="number">
+              <input id="price" type="number">
             </div>
             <div class="common_input">
               <label class="form-label">Quantity</label>
-              <input type="number">
+              <input id="quantity" type="number">
             </div>
 
             <div class="modal-footer-extended">

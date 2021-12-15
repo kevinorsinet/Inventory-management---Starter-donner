@@ -12,3 +12,24 @@
     option.value = item;
     category.add(option);
   })
+
+  function addNewProducts() {
+    const name = document.getElementById('name').value;
+    const category = document.getElementById('category').value;
+    const price = document.getElementById('price').value;
+    const quantity = document.getElementById('quantity').value;
+    const id = new Date().valueOf();
+
+    // nouveau produit
+    const product = {
+      idProduct: id,
+      // id:id,
+      // id,
+      nameProduct: name,
+      priceProduct: price,
+      categoryProduct: category,
+      quantityProduct: quantity
+    } 
+
+    console.log("newProduct", product);
+  }
