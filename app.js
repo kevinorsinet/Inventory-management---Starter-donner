@@ -50,7 +50,10 @@
     const products = getProducts();
     const tableContent = document.getElementById('tableContent');
 
-    
+    if (products.length) {
+      const message = document.getElementById('message');
+      message.style.display = 'none';
+    }
 
     // console.log(products);
     products.forEach((item)=> {
@@ -138,7 +141,6 @@
     // Mis à jour de la liste des produits
     localStorage.setItem('products', JSON.stringify(productsList));
     location.reload();
-
-
+    
   }
 
